@@ -11,6 +11,38 @@ module.exports = function(app) {
     });
   });
 
+
+  // Load form page 
+  app.get("/form", function(req, res) {
+    db.Example.findAll({}).then(function(dbExamples) {
+      res.render("form", {
+        msg: "Welcome!",
+        examples: dbExamples
+      });
+    });
+  });
+
+
+  // Load logger page
+  app.get("/log", function(req, res) {
+    db.Example.findAll({}).then(function(dbExamples) {
+      res.render("log", {
+        msg: "Welcome!",
+        examples: dbExamples
+      });
+    });
+  });
+
+    // Load summary page
+    app.get("/summary", function(req, res) {
+      db.Example.findAll({}).then(function(dbExamples) {
+        res.render("summary", {
+          msg: "Welcome!",
+          examples: dbExamples
+        });
+      });
+    });
+
   // Load example page and pass in an example by id
   app.get("/user-page/:id", function(req, res) {
     db.Example.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
