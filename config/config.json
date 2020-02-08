@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "Jacky",
+    "password": "B@mysql15",
     "database": "healthfit",
     "host": "localhost",
     "port": 3306,
@@ -9,7 +9,7 @@
   },
   "test": {
     "username": "root",
-    "password": "Jacky",
+    "password": "B@mysql15",
     "database": "healthfit",
     "host": "localhost",
     "port": 3306,
