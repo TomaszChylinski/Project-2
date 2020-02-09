@@ -1,3 +1,37 @@
 .list-group-item {
   line-height: 2.5;
 }
+
+nav {
+  margin-bottom: 2%;
+  background-color: #0070bf;
+  font-style: white;
+}
+
+.nav-link {
+  color: white;
+}
+
+.navbar-brand {
+  color: white;
+}
+
+#submit{
+background-color: #0070bf;
+color: white;
+}
+
+footer {
+  color: white;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #0070bf;;
+  text-align: center;
+}
+
+footer a{
+  color: white;
+}
+

@@ -1,115 +1,70 @@
 <div class="container">
-   <div class="row">
-      <div class="col-md-12">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <a class="navbar-brand" href="#">{{appName}}</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-              <li class="nav-item active">
-                <a class="nav-link" href="#">{{about}} <span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">{{workout}}</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                  aria-haspopup="true" aria-expanded="false">
-                  {{options}}
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#">Action</a>
-                  <a class="dropdown-item" href="#">Another action</a>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                </div>
-              </li>
-                <li class="nav-item">
-                <a class="nav-link" href="#">{{learn}}</a>
-              </li>
-              
 
 
-            </ul>
+  <div class="row">
+    <div class="col-md-11">
+      <form>
+        <div class="form-group row">
+          <label for="fullName" class="col-sm-2 col-form-label">Full Name</label>
+          <div class="col-sm-10">
+            <input type="fullName" class="form-control" id="fullName" placeholder="First Name" />
           </div>
-        </nav>
-        <br>
-
-      </div>
-
-    </div>
-
- <div class="row">
-      <div class="col-md-10">
-        <form>
-          <div class="form-group row">
-            <label for="firstName" class="col-sm-2 col-form-label">First Name</label>
+        </div>
+        <div class="form-group row">
+          <label for="calorieGoal" class="col-sm-2 col-form-label">Daily Calorie Goal</label>
+          <div class="col-sm-10">
+            <input type="number" class="form-control" id="calorieGoal" placeholder="2000" />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="weightGoal" class="col-sm-2 col-form-label">Goal Weight</label>
+          <div class="col-sm-10">
+            <input type="number" class="form-control" id="weightGoal" placeholder="175" />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="currentWeight" class="col-sm-2 col-form-label">Current Weight</label>
+          <div class="col-sm-10">
+            <input type="number" class="form-control" id="currentWeight" placeholder="185" />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="userHeigh" class="col-sm-2 col-form-label">Age</label>
+          <div class="col-sm-10">
+            <input type="number" class="form-control" id="age" placeholder="35" />
+          </div>
+        </div>
+        <fieldset class="form-group">
+          <div class="row">
+            <legend class="col-form-label col-sm-2 pt-0">Gender</legend>
             <div class="col-sm-10">
-              <input type="firstname" class="form-control" id="firstName" placeholder="First Name" />
-            </div>
-          </div>
-          <div class="form-group row">
-            <label for="lastName" class="col-sm-2 col-form-label">Last Name</label>
-            <div class="col-sm-10">
-              <input type="lastName" class="form-control" id="lastName" placeholder="First Name" />
-            </div>
-          </div>
-          <div class="form-group row">
-            <label for="calorieGoal" class="col-sm-2 col-form-label">Daily Calorie Goal</label>
-            <div class="col-sm-10">
-              <input type="number" class="form-control" id="calorieGoal" placeholder="2000" />
-            </div>
-          </div>
-          <div class="form-group row">
-            <label for="weightGoal" class="col-sm-2 col-form-label">Goal Weight</label>
-            <div class="col-sm-10">
-              <input type="number" class="form-control" id="weightGoal" placeholder="175" />
-            </div>
-          </div>
-          <div class="form-group row">
-            <label for="currentWeight" class="col-sm-2 col-form-label">Current Weight</label>
-            <div class="col-sm-10">
-              <input type="number" class="form-control" id="currentWeight" placeholder="185" />
-            </div>
-          </div>
-          <div class="form-group row">
-            <label for="userHeigh" class="col-sm-2 col-form-label">Height</label>
-            <div class="col-sm-10">
-              <input type="number" class="form-control" id="height" placeholder="5.8" />
-            </div>
-          </div>
-          <div class="form-group row">
-            <label for="userHeigh" class="col-sm-2 col-form-label">Age</label>
-            <div class="col-sm-10">
-              <input type="number" class="form-control" id="age" placeholder="35" />
-            </div>
-          </div>
-          <fieldset class="form-group">
-            <div class="row">
-              <legend class="col-form-label col-sm-2 pt-0">Gender</legend>
-              <div class="col-sm-10">
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="gridRadios" id="female" value="Female" checked />
-                  <label class="form-check-label" for="gridRadios1">
-                    Female
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="gridRadios" id="male" value="Male" />
-                  <label class="form-check-label" for="gridRadios2">
-                    Male
-                  </label>
-                </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="gridRadios" id="female" value="Female" checked />
+                <label class="form-check-label" for="gridRadios1">
+                  Female
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="gridRadios" id="male" value="Male" />
+                <label class="form-check-label" for="gridRadios2">
+                  Male
+                </label>
               </div>
             </div>
-          </fieldset>
-          <div class="form-group row">
-            <div class="col-sm-10">
-              <button id="submitButton" type="submit" class="btn btn-primary">Submit</button>
-            </div>
           </div>
-        </form>
-      </div>
-</div></div>
+        </fieldset>
+        <div class="form-group row">
+          <label for="inspiration" class="col-sm-2 col-form-label">What inspires you to get healthy?</label>
+          <div class="col-sm-10">
+            <input  class="form-control" id="inspiration" placeholder="Your Inspiration" />
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-sm-10">
+            <button id="submitButton" type="submit" class="btn btn-primary">Submit Form</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

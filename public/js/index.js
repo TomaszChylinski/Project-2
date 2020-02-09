@@ -67,6 +67,7 @@ var handleFormSubmit = function(event) {
   var example = {
     text: $exampleText.val().trim(),
     description: $exampleDescription.val().trim()
+
   };
 
   if (!(example.text && example.description)) {

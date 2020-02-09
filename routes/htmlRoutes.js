@@ -39,6 +39,12 @@ module.exports = function(app) {
     db.Example.findAll({}).then(function(dbExamples) {
       res.render("log", {
         msg: "Welcome!",
+        msg: "Make a Choice For a Better Tomorrow Today!",
+        learn: "Learn More",
+        about: "About Us",
+        workout: "Workout Tutorials",
+        options: "Healthy Dinning",
+        appName: "Health Fit",
         examples: dbExamples
       });
     });
@@ -49,6 +55,12 @@ module.exports = function(app) {
       db.Example.findAll({}).then(function(dbExamples) {
         res.render("summary", {
           msg: "Welcome!",
+          msg: "Make a Choice For a Better Tomorrow Today!",
+          learn: "Learn More",
+          about: "About Us",
+          workout: "Workout Tutorials",
+          options: "Healthy Dinning",
+          appName: "Health Fit",
           examples: dbExamples
         });
       });
@@ -69,6 +81,12 @@ module.exports = function(app) {
     db.Example.findAll({}).then(function(dbExamples) {
       res.render("about-us", {
         msg: "Welcome!",
+        msg: "Make a Choice For a Better Tomorrow Today!",
+        learn: "Learn More",
+        about: "About Us",
+        workout: "Workout Tutorials",
+        options: "Healthy Dinning",
+        appName: "Health Fit",
         examples: dbExamples
       });
     });
