@@ -1,6 +1,5 @@
 USE healthfit;
 
-
 INSERT INTO user_data
     (userId,userName,dailyCalorieGoal,goalWeight,currentWeight,age,gender)
 VALUES

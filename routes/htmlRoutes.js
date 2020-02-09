@@ -5,13 +5,13 @@ module.exports = function(app) {
   app.get("/", function(req, res) {
     db.Example.findAll({}).then(function(dbExamples) {
       res.render("index", {
+        msg: "Welcome!",
         msg: "Make a Choice For a Better Tomorrow Today!",
         learn: "Learn More",
         about: "About Us",
         workout: "Workout Tutorials",
         options: "Healthy Dinning",
         appName: "Health Fit",
-        examples: dbExamples
       });
     });
   });
@@ -39,7 +39,12 @@ module.exports = function(app) {
     db.Example.findAll({}).then(function(dbExamples) {
       res.render("log", {
         msg: "Welcome!",
-        examples: dbExamples
+        msg: "Make a Choice For a Better Tomorrow Today!",
+        learn: "Learn More",
+        about: "About Us",
+        workout: "Workout Tutorials",
+        options: "Healthy Dinning",
+        appName: "Health Fit",
       });
     });
   });
@@ -49,7 +54,12 @@ module.exports = function(app) {
       db.Example.findAll({}).then(function(dbExamples) {
         res.render("summary", {
           msg: "Welcome!",
-          examples: dbExamples
+          msg: "Make a Choice For a Better Tomorrow Today!",
+          learn: "Learn More",
+          about: "About Us",
+          workout: "Workout Tutorials",
+          options: "Healthy Dinning",
+          appName: "Health Fit",
         });
       });
     });
@@ -69,7 +79,12 @@ module.exports = function(app) {
     db.Example.findAll({}).then(function(dbExamples) {
       res.render("about-us", {
         msg: "Welcome!",
-        examples: dbExamples
+        msg: "Make a Choice For a Better Tomorrow Today!",
+        learn: "Learn More",
+        about: "About Us",
+        workout: "Workout Tutorials",
+        options: "Healthy Dinning",
+        appName: "Health Fit",
       });
     });
   });
