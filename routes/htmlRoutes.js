@@ -1,4 +1,5 @@
 var db = require("../models");
+var axios = require("axios");
 
 module.exports = function(app) {
   // Load index page
@@ -72,6 +73,22 @@ module.exports = function(app) {
         examples: dbExamples
       });
     });
+  });
+
+  app.get("/calorie", function(req, res) {
+    res.render("calorie-counter")
+//     axios.get("https://trackapi.nutritionix.com/v2/search/instant?query=blueberry" , {
+//       headers: {
+//       "x-app-id": "0e389d93",
+//       "x-app-key": '630cb2d7a137cf19d3e3d6c06714b833',
+//   }}).then(
+ 
+// // axios.get("http://www.omdbapi.com/?t=remember+the+titans&y=&plot=short&apikey=trilogy").then(
+//       function(response) {
+//     // console.log("The movie's rating is: " + response.data.imdbRating);
+//         console.log(JSON.stringify(response.data));
+//       })
+  
   });
 
   // Render 404 page for any unmatched routes

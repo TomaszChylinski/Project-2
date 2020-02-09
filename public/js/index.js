@@ -1,9 +1,10 @@
 // Get references to page elements
+// var axios = require("axios");
 var $exampleText = $("#example-text");
 var $exampleDescription = $("#example-description");
 var $submitBtn = $("#submit");
 var $exampleList = $("#example-list");
-
+var $calsearch = $("#calsearch");
 // The API object contains methods for each kind of request we'll make
 var API = {
   saveExample: function(example) {
@@ -81,7 +82,21 @@ var handleFormSubmit = function(event) {
   $exampleText.val("");
   $exampleDescription.val("");
 };
-
+function handleCalSubmit (e){
+  e.preventDefault();
+  console.log("test");
+  axios.get("https://trackapi.nutritionix.com/v2/search/instant?query=blueberry" , {
+      headers: {
+      "x-app-id": "0e389d93",
+      "x-app-key": "630cb2d7a137cf19d3e3d6c06714b833",
+  }}).then(
+ 
+// axios.get("http://www.omdbapi.com/?t=remember+the+titans&y=&plot=short&apikey=trilogy").then(
+      function(response) {
+    // console.log("The movie's rating is: " + response.data.imdbRating);
+        console.log(JSON.stringify(response.data));
+      })
+}
 // handleDeleteBtnClick is called when an example's delete button is clicked
 // Remove the example from the db and refresh the list
 var handleDeleteBtnClick = function() {
@@ -97,3 +112,5 @@ var handleDeleteBtnClick = function() {
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit);
 $exampleList.on("click", ".delete", handleDeleteBtnClick);
+
+$calsearch.on("click", handleCalSubmit);
