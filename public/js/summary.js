@@ -70,7 +70,7 @@ var handleFormSubmit = function(event) {
   };
 
   if (!(example.text && example.description)) {
-    alert("You must enter an example text and description!");
+    alert("Please enter meal name and calorie total");
     return;
   }
 
