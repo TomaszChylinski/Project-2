@@ -1,8 +1,13 @@
 // Get references to page elements
-var $exampleText = $("#example-text");
-var $exampleDescription = $("#example-description");
 var $submitBtn = $("#submit");
-var $exampleList = $("#example-list");
+var $userName = $("#fullName");
+var $dailyCalorieGoal = $("#calorieGoal");
+var $goalWeight = $("#calorieGoal");
+var $currentWeight = $("#currentWeight");
+var $age = $("#age");
+var $gender = $("input[name=genderChoice]:checked");
+var $inspired = $("#inspired");
+
 
 // The API object contains methods for each kind of request we'll make
 var API = {
@@ -65,13 +70,17 @@ var handleFormSubmit = function(event) {
   event.preventDefault();
 
   var example = {
-    text: $exampleText.val().trim(),
-    description: $exampleDescription.val().trim()
-
+    userName: $userName.val().trim(),
+    dailyCalorieGoal: $dailyCalorieGoal.val().trim(),
+    goalWeight: $goalWeight.val().trim(),
+    currentWeight: $currentWeight.val().trim(),
+    age: $age.val().trim(),
+    gender: $gender.val().trim(),
+    inspired: $inspired.val().trim()
   };
 
-  if (!(example.text && example.description)) {
-    alert("You must enter an example text and description!");
+  if (!(example.userName && example.dailyCalorieGoal && example.goalWeight && example.currentWeight && example.age && example.gender && example.inspired )) {
+    alert("Please make sure to fill out each category, thank you");
     return;
   }
 
@@ -79,8 +88,13 @@ var handleFormSubmit = function(event) {
     refreshExamples();
   });
 
-  $exampleText.val("");
-  $exampleDescription.val("");
+  $userName.val("");
+  $dailyCalorieGoal.val("");
+  $goalWeight.val("");
+  $currentWeight.val("");
+  $age.val("");
+  $gender.val("");
+  $inspired.val(""); 
 };
 
 // handleDeleteBtnClick is called when an example's delete button is clicked
@@ -97,4 +111,4 @@ var handleDeleteBtnClick = function() {
 
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit);
-$exampleList.on("click", ".delete", handleDeleteBtnClick);
+//$exampleList.on("click", ".delete", handleDeleteBtnClick);

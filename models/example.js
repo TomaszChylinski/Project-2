@@ -1,13 +1,12 @@
 module.exports = function(sequelize, DataTypes) {
-
-
   var Example = sequelize.define("Example", {
-    text: DataTypes.STRING,
-    description: DataTypes.TEXT,
-    userName: DataTypes.STRING
+    userName: DataTypes.STRING,
+    dailyCalorieGoal: DataTypes.INTEGER,
+    goalWeight: DataTypes.INTEGER,
+    currentWeight: DataTypes.INTEGER,
+    age: DataTypes.INTEGER,
+    gender: DataTypes.STRING,
+    inspired: DataTypes.STRING
   });
-
-
-
   return Example;
 };

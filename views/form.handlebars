@@ -1,70 +1,76 @@
-<div class="container">
-
-
-  <div class="row">
-    <div class="col-md-11">
-      <form>
-        <div class="form-group row">
-          <label for="fullName" class="col-sm-2 col-form-label">Full Name</label>
-          <div class="col-sm-10">
-            <input type="fullName" class="form-control" id="fullName" placeholder="First Name" />
-          </div>
-        </div>
-        <div class="form-group row">
-          <label for="calorieGoal" class="col-sm-2 col-form-label">Daily Calorie Goal</label>
-          <div class="col-sm-10">
-            <input type="number" class="form-control" id="calorieGoal" placeholder="2000" />
-          </div>
-        </div>
-        <div class="form-group row">
-          <label for="weightGoal" class="col-sm-2 col-form-label">Goal Weight</label>
-          <div class="col-sm-10">
-            <input type="number" class="form-control" id="weightGoal" placeholder="175" />
-          </div>
-        </div>
-        <div class="form-group row">
-          <label for="currentWeight" class="col-sm-2 col-form-label">Current Weight</label>
-          <div class="col-sm-10">
-            <input type="number" class="form-control" id="currentWeight" placeholder="185" />
-          </div>
-        </div>
-        <div class="form-group row">
-          <label for="userHeigh" class="col-sm-2 col-form-label">Age</label>
-          <div class="col-sm-10">
-            <input type="number" class="form-control" id="age" placeholder="35" />
-          </div>
-        </div>
-        <fieldset class="form-group">
-          <div class="row">
-            <legend class="col-form-label col-sm-2 pt-0">Gender</legend>
+<div id="home">
+  <div class="container">
+    <div class="row">
+      <div class="col-8 offset-2">
+        <h1>{{msg}}</h1>
+        <h2>This is our Home Page!</h2>
+        <form id="user-form" action="POST">
+          <div class="form-group row">
+            <label for="fullName" class="col-sm-2 col-form-label">Full Name</label>
             <div class="col-sm-10">
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="gridRadios" id="female" value="Female" checked />
-                <label class="form-check-label" for="gridRadios1">
-                  Female
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="gridRadios" id="male" value="Male" />
-                <label class="form-check-label" for="gridRadios2">
-                  Male
-                </label>
-              </div>
+              <input type="fullName" class="form-control" id="fullName" placeholder="First Name" />
             </div>
           </div>
-        </fieldset>
-        <div class="form-group row">
-          <label for="inspiration" class="col-sm-2 col-form-label">What inspires you to get healthy?</label>
-          <div class="col-sm-10">
-            <input  class="form-control" id="inspiration" placeholder="Your Inspiration" />
+          <div class="form-group row">
+            <label for="calorieGoal" class="col-sm-2 col-form-label">Daily Calorie Goal</label>
+            <div class="col-sm-10">
+              <input type="number" class="form-control" id="calorieGoal" placeholder="2000" />
+            </div>
           </div>
-        </div>
-        <div class="form-group row">
-          <div class="col-sm-10">
-            <button id="submitButton" type="submit" class="btn btn-primary">Submit Form</button>
+          <div class="form-group row">
+            <label for="weightGoal" class="col-sm-2 col-form-label">Goal Weight</label>
+            <div class="col-sm-10">
+              <input type="number" class="form-control" id="weightGoal" placeholder="175" />
+            </div>
           </div>
-        </div>
-      </form>
+          <div class="form-group row">
+            <label for="currentWeight" class="col-sm-2 col-form-label">Current Weight</label>
+            <div class="col-sm-10">
+              <input type="number" class="form-control" id="currentWeight" placeholder="185" />
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="userHeigh" class="col-sm-2 col-form-label">Age</label>
+            <div class="col-sm-10">
+              <input type="number" class="form-control" id="age" placeholder="35" />
+            </div>
+          </div>
+          <fieldset class="form-group">
+            <div class="row">
+              <legend class="col-form-label col-sm-2 pt-0">Gender</legend>
+              <div class="col-sm-10">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="genderChoice" id="female" value="Female" checked />
+                  <label class="form-check-label" for="genderChoice1">
+                    Female
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="genderChoice" id="male" value="Male" />
+                  <label class="form-check-label" for="genderChoice2">
+                    Male
+                  </label>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+          <div class="form-group row">
+            <label for="inspired" class="col-sm-2 col-form-label">What inspires you to get healthy?</label>
+            <div class="col-sm-10">
+              <input class="form-control" id="inspired" placeholder="Your Inspiration" />
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-sm-10">
+              <a  id="submit" href="/summary" type="submit" class="btn btn-primary">Submit Form</a>
+            </div>
+          </div>
+        </form>
+ 
+      </div>
     </div>
   </div>
 </div>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
