@@ -46,7 +46,7 @@ var refreshExamples = function() {
         .append($a);
 
       var $button = $("<button>")
-        .addClass("btn btn-danger float-right delete")
+        .addClass("btn btn-primary float-right delete")
         .text("ｘ");
 
       $li.append($button);
@@ -70,7 +70,7 @@ var handleFormSubmit = function(event) {
   };
 
   if (!(example.text && example.description)) {
-    alert("Please make sure you filled in your meal and calorie total");
+    alert("You must enter an example text and description!");
     return;
   }
 

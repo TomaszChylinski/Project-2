@@ -21,6 +21,11 @@ background-color: #0070bf;
 color: white;
 }
 
+#startBtn{
+  background-color: #0070bf;
+  color: white;
+}
+
 footer {
   color: white;
   position: fixed;
@@ -37,6 +42,15 @@ footer a{
 
 .list-group-item{
   font-family: sans-serif;
- color: #0070bf;
+  color: #0070bf;
+}
+
+.remove{
+  background-color: #0070bf;;
+}
+
+.formBtn{
+  background-color: #0070bf;
+  color: white;
 }
 

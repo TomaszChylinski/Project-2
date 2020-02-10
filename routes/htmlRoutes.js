@@ -31,8 +31,8 @@ module.exports = function(app) {
   });
 
   //load summary page
-  app.get("/summary", function(req, res) {
-    db.CalTotal.findAll({}).then(function(dbCalTotal) {
+ app.get("/summary", function(req, res) {
+    db.Example.findAll({}).then(function(dbExamples) {
       res.render("summary", {
         msg: "Make a Choice For a Better Tomorrow Today!",
         learn: "Learn More",
@@ -40,10 +40,27 @@ module.exports = function(app) {
         workout: "Workout Tutorials",
         options: "Healthy Dinning",
         appName: "Health Fit",
-        calories: dbCalTotal
+        example: dbExamples
       });
     });
-  });
+  }); 
+
+    //load about us
+    app.get("/about-us", function(req, res) {
+      db.Example.findAll({}).then(function(dbExamples) {
+        res.render("about-us", {
+          msg: "Welcome!",
+          msg: "Make a Choice For a Better Tomorrow Today!",
+          learn: "Learn More",
+          about: "About Us",
+          workout: "Workout Tutorials",
+          options: "Healthy Dinning",
+          appName: "Health Fit",
+          examples: dbExamples
+        });
+      });
+    });
+
 
 
   // Load example page and pass in an example by id
