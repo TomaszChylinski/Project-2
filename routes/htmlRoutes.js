@@ -32,7 +32,7 @@ module.exports = function(app) {
 
   //load summary page
   app.get("/summary", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
+    db.CalTotal.findAll({}).then(function(dbCalTotal) {
       res.render("summary", {
         msg: "Make a Choice For a Better Tomorrow Today!",
         learn: "Learn More",
@@ -40,7 +40,7 @@ module.exports = function(app) {
         workout: "Workout Tutorials",
         options: "Healthy Dinning",
         appName: "Health Fit",
-        examples: dbExamples
+        calories: dbCalTotal
       });
     });
   });

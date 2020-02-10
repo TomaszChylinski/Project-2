@@ -21,4 +21,26 @@ module.exports = function(app) {
       res.json(dbExample);
     });
   });
+
+
+    // Get all CalTotal
+    app.get("/api/calorie-tracker", function(req, res) {
+      db.CalTotal.findAll({}).then(function(dbCalTotal) {
+        res.json(dbCalTotal);
+      });
+    });
+  
+    // Create a new CalTotal
+    app.post("/api/calorie-tracker", function(req, res) {
+      db.CalTotal.create(req.body).then(function(dbCalTotal) {
+        res.json(dbCalTotal);
+      });
+    });
+  
+    // Delete an CalTotal by id
+    app.delete("/api/calorie-tracker", function(req, res) {
+      db.CalTotal.destroy({ where: { id: req.params.id } }).then(function(dbCalTotal) {
+        res.json(dbCalTotal);
+      });
+    });
 };

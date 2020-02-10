@@ -1,10 +1,51 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-12">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</head>
+ 
+ <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+       
+  <ul class="list-group list-group-horizontal">
+    <li class="list-group-item">Full Name:<span> John Quincy </span></li>
+    <li class="list-group-item">Daily Calorie Goal: <span> 1800 </span></li>
+    <li class="list-group-item">Goal Weight: <span> 176lb</span></li>
+    <li class="list-group-item">Current Weight: <span> 205lb </span></li>
+    <li class="list-group-item">Your Calorie Intake for today<span> 205lb  {{today}}</span></li>
+  </ul>
 
-            <h1>Your Summary Page</h1>
+      </div>
+    </div>
+<br>
+    <div class="row">
+      <div class="col-8 offset-2">
 
-
+        <h2>Input Your meal and Calorie Consumption</h2>
+        <form class="clearfix mb-4" action="POST">
+          <div class="form-group">
+            <label for="example-text">Meal</label>
+            <input type="text" id="example-text" class="form-control" aria-describedby="example-text" placeholder="Enter Your Meal">
+          </div>
+          <div class="form-group">
+            <label for="example-description">Calorie Total</label>
+            <textarea class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Calorie Total"></textarea>
+          </div>
+          <button id="submit" class="btn btn-primary float-right">Add Meal</button>
+        </form>
+        <h3>Your Meals For Today:</h3>
+        <ul id="example-list" class="list-group">
+          {{#each examples}}
+          <li data-id="{{this.id}}" class="list-group-item">
+            <a href="example/{{this.id}}">{{this.text}}</a>
+            <button class="btn btn-danger float-right delete">ｘ</button>
+          </li>
+          {{/each}}
+        </ul>
+      </div>
     </div>
   </div>
 </div>
+
+<script src="/js/summary.js"></script>
