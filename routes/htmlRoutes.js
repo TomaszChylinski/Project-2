@@ -11,17 +11,14 @@ module.exports = function(app) {
         workout: "Workout Tutorials",
         options: "Healthy Dinning",
         appName: "Health Fit",
-        examples: dbExamples
       });
     });
   });
 
-
-  // Load form page 
+//load form page
   app.get("/form", function(req, res) {
     db.Example.findAll({}).then(function(dbExamples) {
       res.render("form", {
-        msg: "Welcome!",
         msg: "Make a Choice For a Better Tomorrow Today!",
         learn: "Learn More",
         about: "About Us",
@@ -33,27 +30,25 @@ module.exports = function(app) {
     });
   });
 
-
-  // Load logger page
-  app.get("/log", function(req, res) {
+  //load summary page
+ app.get("/summary", function(req, res) {
     db.Example.findAll({}).then(function(dbExamples) {
-      res.render("log", {
-        msg: "Welcome!",
+      res.render("summary", {
         msg: "Make a Choice For a Better Tomorrow Today!",
         learn: "Learn More",
         about: "About Us",
         workout: "Workout Tutorials",
         options: "Healthy Dinning",
         appName: "Health Fit",
-        examples: dbExamples
+        example: dbExamples
       });
     });
-  });
+  }); 
 
-    // Load summary page
-    app.get("/summary", function(req, res) {
+    //load about us
+    app.get("/about-us", function(req, res) {
       db.Example.findAll({}).then(function(dbExamples) {
-        res.render("summary", {
+        res.render("about-us", {
           msg: "Welcome!",
           msg: "Make a Choice For a Better Tomorrow Today!",
           learn: "Learn More",
@@ -66,28 +61,13 @@ module.exports = function(app) {
       });
     });
 
+
+
   // Load example page and pass in an example by id
-  app.get("/user-page/:id", function(req, res) {
+  app.get("/example/:id", function(req, res) {
     db.Example.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
       res.render("example", {
         example: dbExample
-      });
-    });
-  });
-
-
-  // Load about us page
-  app.get("/about-us", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.render("about-us", {
-        msg: "Welcome!",
-        msg: "Make a Choice For a Better Tomorrow Today!",
-        learn: "Learn More",
-        about: "About Us",
-        workout: "Workout Tutorials",
-        options: "Healthy Dinning",
-        appName: "Health Fit",
-        examples: dbExamples
       });
     });
   });

@@ -1,3 +1,6 @@
 DROP DATABASE IF EXISTS healthfit;
 CREATE DATABASE healthfit;
 
+
+DROP DATABASE IF EXISTS calorieIntake;
+CREATE DATABASE calorieIntake;
