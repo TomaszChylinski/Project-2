@@ -1,12 +1,9 @@
-// Get references to page elements
+
+var $exampleText = $("#example-text");
+var $exampleDescription = $("#example-description");
 var $submitBtn = $("#submit");
-var $userName = $("#fullName");
-var $dailyCalorieGoal = $("#calorieGoal");
-var $goalWeight = $("#calorieGoal");
-var $currentWeight = $("#currentWeight");
-var $age = $("#age");
-var $gender = $("input[name=genderChoice]:checked");
-var $inspired = $("#inspired");
+var $exampleList = $("#example-list");
+
 
 
 // The API object contains methods for each kind of request we'll make
@@ -41,6 +38,7 @@ var refreshExamples = function() {
     var $examples = data.map(function(example) {
       var $a = $("<a>")
         .text(example.text)
+        .addClass("caloriePerMeal")
         .attr("href", "/example/" + example.id);
 
       var $li = $("<li>")
@@ -50,9 +48,14 @@ var refreshExamples = function() {
         })
         .append($a);
 
+        var $span = $("<span>")
+        .addClass("caloriePerMeal")
+        .text(example.description + " Calories");
+        $li.append($span)
+
       var $button = $("<button>")
-        .addClass("btn btn-danger float-right delete")
-        .text("ｘ");
+        .addClass("caloriePerMeal btn btn-primary delete")
+        .text("Delete");
 
       $li.append($button);
 
@@ -70,16 +73,11 @@ var handleFormSubmit = function(event) {
   event.preventDefault();
 
   var example = {
-    userName: $userName.val().trim(),
-    dailyCalorieGoal: $dailyCalorieGoal.val().trim(),
-    goalWeight: $goalWeight.val().trim(),
-    currentWeight: $currentWeight.val().trim(),
-    age: $age.val().trim(),
-    gender: $gender.val().trim(),
-    inspired: $inspired.val().trim()
+    text: $exampleText.val().trim(),
+    description: $exampleDescription.val().trim()
   };
 
-  if (!(example.userName && example.dailyCalorieGoal && example.goalWeight && example.currentWeight && example.age && example.gender && example.inspired )) {
+  if (!(example.text && example.description)) {
     alert("Please make sure to fill out each category, thank you");
     return;
   }
@@ -88,13 +86,8 @@ var handleFormSubmit = function(event) {
     refreshExamples();
   });
 
-  $userName.val("");
-  $dailyCalorieGoal.val("");
-  $goalWeight.val("");
-  $currentWeight.val("");
-  $age.val("");
-  $gender.val("");
-  $inspired.val(""); 
+  $exampleText.val("");
+  $exampleDescription.val("");
 };
 
 // handleDeleteBtnClick is called when an example's delete button is clicked

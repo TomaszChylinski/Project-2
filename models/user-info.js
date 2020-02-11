@@ -1,5 +1,6 @@
 module.exports = function(sequelize, DataTypes) {
-  var Example = sequelize.define("Example", {
+  var User = sequelize.define("User", {
+    // Giving the Author model a name of type STRING
     userName: DataTypes.STRING,
     dailyCalorieGoal: DataTypes.INTEGER,
     goalWeight: DataTypes.INTEGER,
@@ -7,6 +8,7 @@ module.exports = function(sequelize, DataTypes) {
     age: DataTypes.INTEGER,
     gender: DataTypes.STRING,
     inspired: DataTypes.STRING
-  })
-  return Example;
+  });
+  
+  return User;
 };

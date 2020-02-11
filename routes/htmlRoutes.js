@@ -17,7 +17,7 @@ module.exports = function(app) {
 
 //load form page
   app.get("/form", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
+    db.User.findAll({}).then(function(dbUser) {
       res.render("form", {
         msg: "Make a Choice For a Better Tomorrow Today!",
         learn: "Learn More",
@@ -25,7 +25,7 @@ module.exports = function(app) {
         workout: "Workout Tutorials",
         options: "Healthy Dinning",
         appName: "Health Fit",
-        examples: dbExamples
+        examples: dbUser
       });
     });
   });
@@ -56,7 +56,6 @@ module.exports = function(app) {
           workout: "Workout Tutorials",
           options: "Healthy Dinning",
           appName: "Health Fit",
-          examples: dbExamples
         });
       });
     });
