@@ -40,6 +40,46 @@ var API = {
 };
 
 
+// refreshExamples gets new examples from the db and repopulates the list
+var refreshUsers = function() {
+    API.getUsers().then(function(data) {
+      var $users = data.map(function(user) {
+        var $a = $("<a>")
+          .text(user.userName)
+          .addClass("caloriePerMeal")
+          .attr("href", "/user/" + user.id);
+  
+        var $li = $("<li>")
+          .attr({
+            class: "list-group-item",
+            "data-id": user.id
+          })
+          .append($a);
+  
+          var $span = $("<span>")
+          .addClass("caloriePerMeal")
+          .text(user.description + " Calories");
+          $li.append($span)
+  
+        var $button = $("<button>")
+          .addClass("caloriePerMeal btn btn-primary delete")
+          .text("Delete");
+  
+        $li.append($button);
+  
+        return $li;
+      });
+  
+      $userList.empty();
+      $userList.append($users);
+    });
+  };
+
+
+
+
+
+
 var handleFormSubmit = function (event) {
     event.preventDefault();
 
@@ -57,10 +97,9 @@ var handleFormSubmit = function (event) {
         alert("Please make sure to fill out each category, thank you");
         return;
     }
-
-    API.saveUser(user).then(function () {
- 
-    });
+    API.saveUser(user).then(function() {
+        refreshUser();
+      });
 
     $userName.val().trim();
     $dailyCalorieGoal.val().trim();
