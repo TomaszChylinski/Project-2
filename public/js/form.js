@@ -75,13 +75,7 @@ var refreshUsers = function() {
     });
   };
 
-
-
-
-
-
 var handleFormSubmit = function (event) {
-
 
     var user = {
         userName: $userName.val().trim(),
@@ -95,7 +89,9 @@ var handleFormSubmit = function (event) {
 
     if (!(user.userName && user.dailyCalorieGoal && user.goalWeight && user.currentWeight && user.age && user.gender && user.inspired)) {
         alert("Please make sure to fill out each category, thank you");
-        return;
+        event.preventDefault();
+
+        return
     }
     API.saveUser(user).then(function() {
         refreshUser();
