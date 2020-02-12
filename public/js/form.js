@@ -81,7 +81,7 @@ var refreshUsers = function() {
 
 
 var handleFormSubmit = function (event) {
-    event.preventDefault();
+
 
     var user = {
         userName: $userName.val().trim(),

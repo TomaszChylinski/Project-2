@@ -3,10 +3,11 @@ var $exampleText = $("#example-text");
 var $exampleDescription = $("#example-description");
 var $submitBtn = $("#submit");
 var $exampleList = $("#example-list");
+var $userList = $("#userInfo");
 
 
 
-// The API object contains methods for each kind of request we'll make
+//Meals - The API object contains methods for each kind of request we'll make 
 var API = {
   saveExample: function(example) {
     return $.ajax({
@@ -102,6 +103,44 @@ var handleDeleteBtnClick = function() {
   });
 };
 
+
+  // Function for retrieving authors and getting them ready to be rendered to the page
+  function getMeals() {
+    $.get("/api/examples", function(data) {
+      var rowsToAdd = [];
+      for (var i = 0; i < data.length; i++) {
+        rowsToAdd.push(createAuthorRow(data[i]));
+      }
+      renderAuthorList(rowsToAdd);
+      nameInput.val("");
+    });
+  }
+
+
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit);
-//$exampleList.on("click", ".delete", handleDeleteBtnClick);
+$exampleList.on("click", ".delete", handleDeleteBtnClick);
+
+
+//get today's date
+function getDate(){
+var today = new Date();
+var dd = String(today.getDate()).padStart(2, '0');
+var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+var yyyy = today.getFullYear();
+
+today = mm + '/' + dd + '/' + yyyy;
+document.getElementById("todaysDate").innerHTML = today;
+}
+
+
+// load the following information on the page on doc ready 
+    //date
+    //past meals entered
+
+
+  $( document ).ready(function() {
+    getDate();
+    refreshExamples();
+  });
+  

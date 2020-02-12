@@ -17,7 +17,7 @@ module.exports = function(app) {
 
 //load form page
   app.get("/form", function(req, res) {
-    db.User.findAll({}).then(function(dbUser) {
+    db.Example.findAll({}).then(function(dbExamples) {
       res.render("form", {
         msg: "Make a Choice For a Better Tomorrow Today!",
         learn: "Learn More",
@@ -25,22 +25,20 @@ module.exports = function(app) {
         workout: "Workout Tutorials",
         options: "Healthy Dinning",
         appName: "Health Fit",
-        examples: dbUser
+        examples: dbExamples
       });
     });
   });
 
   //load summary page
  app.get("/summary", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
+    db.User.findAll({
+      where: { 
+      },
+      order: [['createdAt', 'DESC']]
+    }).then(function(dbUser) {
       res.render("summary", {
-        msg: "Make a Choice For a Better Tomorrow Today!",
-        learn: "Learn More",
-        about: "About Us",
-        workout: "Workout Tutorials",
-        options: "Healthy Dinning",
-        appName: "Health Fit",
-        example: dbExamples
+        user: dbUser
       });
     });
   }); 
