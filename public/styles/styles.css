@@ -54,3 +54,8 @@ footer a{
   color: white;
 }
 
+.caloriePerMeal {
+  float: left;
+  width: 33.33%;
+
+}
