@@ -19,7 +19,6 @@ module.exports = function(app) {
   app.get("/form", function(req, res) {
     db.Example.findAll({}).then(function(dbExamples) {
       res.render("form", {
-        msg: "Make a Choice For a Better Tomorrow Today!",
         learn: "Learn More",
         about: "About Us",
         workout: "Workout Tutorials",
@@ -38,6 +37,11 @@ module.exports = function(app) {
       order: [['createdAt', 'DESC']]
     }).then(function(dbUser) {
       res.render("summary", {
+        learn: "Learn More",
+        about: "About Us",
+        workout: "Workout Tutorials",
+        options: "Healthy Dinning",
+        appName: "Health Fit",
         user: dbUser
       });
     });
@@ -47,8 +51,6 @@ module.exports = function(app) {
     app.get("/about-us", function(req, res) {
       db.Example.findAll({}).then(function(dbExamples) {
         res.render("about-us", {
-          msg: "Welcome!",
-          msg: "Make a Choice For a Better Tomorrow Today!",
           learn: "Learn More",
           about: "About Us",
           workout: "Workout Tutorials",
@@ -58,19 +60,15 @@ module.exports = function(app) {
       });
     });
 
-
-
-  // Load example page and pass in an example by id
-  app.get("/example/:id", function(req, res) {
-    db.Example.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
-      res.render("example", {
-        example: dbExample
-      });
-    });
-  });
-
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
-    res.render("404");
+    res.render("404",{
+      learn: "Learn More",
+      about: "About Us",
+      workout: "Workout Tutorials",
+      options: "Healthy Dinning",
+      appName: "Health Fit",
+    });
+    
   });
 };

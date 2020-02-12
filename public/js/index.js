@@ -37,7 +37,7 @@ var API = {
 var refreshExamples = function() {
   API.getExamples().then(function(data) {
     var $examples = data.map(function(example) {
-      var $a = $("<a>")
+      var $meal = $("<span>")
         .text(example.text)
         .addClass("caloriePerMeal")
         .attr("href", "/example/" + example.id);
@@ -47,7 +47,7 @@ var refreshExamples = function() {
           class: "list-group-item",
           "data-id": example.id
         })
-        .append($a);
+        .append($meal);
 
         var $span = $("<span>")
         .addClass("caloriePerMeal")
