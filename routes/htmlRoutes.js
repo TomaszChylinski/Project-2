@@ -9,7 +9,7 @@ module.exports = function(app) {
         learn: "Learn More",
         about: "About Us",
         workout: "Workout Tutorials",
-        options: "Healthy Dinning",
+        options: "Healthy Dining",
         appName: "Health Fit",
       });
     });
@@ -22,7 +22,7 @@ module.exports = function(app) {
         learn: "Learn More",
         about: "About Us",
         workout: "Workout Tutorials",
-        options: "Healthy Dinning",
+        options: "Healthy Dining",
         appName: "Health Fit",
         examples: dbExamples
       });
@@ -40,7 +40,7 @@ module.exports = function(app) {
         learn: "Learn More",
         about: "About Us",
         workout: "Workout Tutorials",
-        options: "Healthy Dinning",
+        options: "Healthy Dining",
         appName: "Health Fit",
         user: dbUser
       });
@@ -54,7 +54,7 @@ module.exports = function(app) {
           learn: "Learn More",
           about: "About Us",
           workout: "Workout Tutorials",
-          options: "Healthy Dinning",
+          options: "Healthy Dining",
           appName: "Health Fit",
         });
       });
@@ -66,7 +66,7 @@ module.exports = function(app) {
       learn: "Learn More",
       about: "About Us",
       workout: "Workout Tutorials",
-      options: "Healthy Dinning",
+      options: "Healthy Dining",
       appName: "Health Fit",
     });
     
