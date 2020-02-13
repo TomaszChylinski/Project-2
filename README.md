@@ -14,17 +14,21 @@ https://github.com/TomaszChylinski/Project-2
 ## How to get start with the app:
 
 ### Basic run command
-    Goto the root of directory to install dependencies then
+ - Goto the root of directory to install dependencies then
 
         `$ npm install`
                 sequelize
                 express
                 express-handlebars
                 mysql/mysql2
+    
+ - Open the `config` folder and update the `config.json` file's `development` object to match your own local MySQL database.
 
-### Run Node and Express Server: node server.js
 
-        It should be appeared on http://localhost:3000/
+
+### Run Node and Express Server: node server.js from root directory of Node file
+
+        It should be appeared on http://localhost:3002/
 
 ### Utilize both GET and POST route for retrieving and adding new data
 
@@ -43,5 +47,3 @@ https://github.com/TomaszChylinski/Project-2
 [Heroku](https://devcenter.heroku.com/articles/github-integration): Deployment using Heroku
 
 [Handlebars](https://handlebarsjs.com/guide/#installation): Template language and input object to generate text format
-
-s
