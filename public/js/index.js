@@ -25,6 +25,12 @@ var API = {
       type: "GET"
     });
   },
+  getUser: function() {
+    return $.ajax({
+      url: "api/users",
+      type: "GET"
+    });
+  },
   deleteExample: function(id) {
     return $.ajax({
       url: "api/examples/" + id,
@@ -68,6 +74,16 @@ var refreshExamples = function() {
   });
 };
 
+
+// getUser gets new user from the db
+var getUserInfo = function() {
+  API.getUser().then(function(data) {
+console.log('Show me the money ', data)
+  });
+};
+
+
+
 // handleFormSubmit is called whenever we submit a new example
 // Save the new example to the db and refresh the list
 var handleFormSubmit = function(event) {
@@ -106,7 +122,7 @@ var handleDeleteBtnClick = function() {
 
   // Function for retrieving authors and getting them ready to be rendered to the page
   function getMeals() {
-    $.get("/api/examples", function(data) {
+    $.get("/api/users", function(data) {
       var rowsToAdd = [];
       for (var i = 0; i < data.length; i++) {
         rowsToAdd.push(createAuthorRow(data[i]));
@@ -142,5 +158,6 @@ document.getElementById("todaysDate").innerHTML = today;
   $( document ).ready(function() {
     getDate();
     refreshExamples();
+    getUserInfo();
   });
   
