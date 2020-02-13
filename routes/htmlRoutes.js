@@ -29,6 +29,19 @@ module.exports = function(app) {
     });
   });
 
+  app.post("/summary", function(req, res) {
+    db.User.findAll({}).then(function(dbUser) {
+      res.render("summary", {
+        learn: "Learn More",
+        about: "About Us",
+        workout: "Workout Tutorials",
+        options: "Healthy Dinning",
+        appName: "Health Fit",
+        user: dbUser
+      });
+    });
+  }); 
+
   //load summary page
  app.get("/summary", function(req, res) {
     db.User.findAll({
