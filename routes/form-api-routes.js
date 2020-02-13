@@ -2,7 +2,7 @@ var db = require("../models");
 
 module.exports = function(app) {
   // Get all users
-  app.get("/api/users", function(req, res) {
+  app.get("/api/forms", function(req, res) {
     db.User.findAll({}).then(function(dbUser) {
       res.json(dbUser);
     });

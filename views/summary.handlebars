@@ -9,12 +9,12 @@
     <div class="col-md-12">
 
       <ul class="list-group list-group-horizontal">
-        <li class="list-group-item">Full Name:<span> Tom C </span></li>
-        <li class="list-group-item">Daily Calorie Goal: <span> 1800 </span></li>
-        <li class="list-group-item">Goal Weight: <span> 176lb</span></li>
-        <li class="list-group-item">Current Weight: <span> 205lb </span></li>
-        <li class="list-group-item">Age: <span> 27 </span></li>
-        <li class="list-group-item" Gender: <span> Male </span></li>
+        <li class="list-group-item">Full Name:<span>{{user.userName}} </span></li>
+        <li class="list-group-item">Daily Calorie Goal: <span> {{user.dailyCalorieGoal}} </span></li>
+        <li class="list-group-item">Goal Weight: <span> {{user.goalWeight}}</span></li>
+        <li class="list-group-item">Current Weight: <span> {{user.currentWeight}} </span></li>
+        <li class="list-group-item">Age: <span> {{user.age}} </span></li>
+        <li class="list-group-item"> Gender: <span> {{user.gender}} </span></li>
       </ul>
 
     </div>
@@ -22,11 +22,9 @@
   <br>
   <div class="row">
     <div class="col-8 offset-2">
-
       <h2>Input Your meal and calorie consumption</h2>
       <form class="clearfix mb-4" action="POST">
         <div class="form-group">
-          <label for="example-text">Meal</label>
           <input type="text" id="example-text" class="form-control" aria-describedby="example-text"
             placeholder="Enter Your Meal">
         </div>

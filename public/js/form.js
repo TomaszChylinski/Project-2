@@ -39,42 +39,6 @@ var API = {
     }
 };
 
-
-// refreshExamples gets new examples from the db and repopulates the list
-var refreshUsers = function() {
-    API.getUsers().then(function(data) {
-      var $users = data.map(function(user) {
-        var $a = $("<a>")
-          .text(user.userName)
-          .addClass("caloriePerMeal")
-          .attr("href", "/user/" + user.id);
-  
-        var $li = $("<li>")
-          .attr({
-            class: "list-group-item",
-            "data-id": user.id
-          })
-          .append($a);
-  
-          var $span = $("<span>")
-          .addClass("caloriePerMeal")
-          .text(user.description + " Calories");
-          $li.append($span)
-  
-        var $button = $("<button>")
-          .addClass("caloriePerMeal btn btn-primary delete")
-          .text("Delete");
-  
-        $li.append($button);
-  
-        return $li;
-      });
-  
-      $userList.empty();
-      $userList.append($users);
-    });
-  };
-
 var handleFormSubmit = function (event) {
 
     var user = {
@@ -89,22 +53,19 @@ var handleFormSubmit = function (event) {
 
     if (!(user.userName && user.dailyCalorieGoal && user.goalWeight && user.currentWeight && user.age && user.gender && user.inspired)) {
         alert("Please make sure to fill out each category, thank you");
-        event.preventDefault();
-
         return
     }
-    API.saveUser(user).then(function() {
-        refreshUser();
-      });
 
-    $userName.val().trim();
-    $dailyCalorieGoal.val().trim();
-    $goalWeight.val().trim();
-    $currentWeight.val().trim();
-    $age.val().trim();
-    $gender.val().trim();
-    $inspired.val().trim();
-  };
+    submitUser(user);
+}
+
+  function submitUser(user) {
+    $.post("/api/users", user, function() {
+      window.location.href = "/summary";
+    });
+  }
+
 
   // Add event listeners to the submit and delete buttons
-$submitBtn.on("click", handleFormSubmit);
+$submitBtn.on("click", handleFormSubmit)
+
