@@ -9,16 +9,6 @@ module.exports = function(app) {
   });
 
 
-    app.get("/api/users", function(req, res) {
-    User.findAll({
-      where: {
-      },
-      order: [['createdAt', 'DESC']]
-    }).then(function(dbUser) {
-      res.json(dbUser);
-    });
-  });
-
   // Create a new user
   app.post("/api/users", function(req, res) {
     db.User.create(req.body).then(function(dbUser) {
