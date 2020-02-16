@@ -16,12 +16,25 @@ nav {
   color: white;
 }
 
-#submit{
-background-color: #0070bf;
-color: white;
+#submit {
+  background-color: #0070bf;
+  color: white;
 }
 
-#startBtn{
+.btn {
+  background-color: #0070bf;
+  color: white;
+}
+
+#add-calories {
+  margin-top: 4%;
+}
+
+#add-calories {
+  margin-top: 6%;
+}
+
+#startBtn {
   background-color: #0070bf;
   color: white;
 }
@@ -32,24 +45,24 @@ footer {
   left: 0;
   bottom: 0;
   width: 100%;
-  background-color: #0070bf;;
+  background-color: #0070bf;
   text-align: center;
 }
 
-footer a{
+footer a {
   color: white;
 }
 
-.list-group-item{
+.list-group-item {
   font-family: sans-serif;
   color: #0070bf;
 }
 
-.remove{
-  background-color: #0070bf;;
+.remove {
+  background-color: #0070bf;
 }
 
-.formBtn{
+.formBtn {
   background-color: #0070bf;
   color: white;
 }
@@ -57,5 +70,13 @@ footer a{
 .caloriePerMeal {
   float: left;
   width: 33.33%;
+}
+.info {
+  font-family: sans-serif;
+}
 
+#add-calories {
+  background-color: #0070bf;
+  color: white;
+  margin-top: 4%;
 }

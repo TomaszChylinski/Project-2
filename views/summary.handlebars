@@ -2,6 +2,8 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="/styles/styles.css" media="screen" title="no title" charset="utf-8">
+
 
 
 <div class="container">
@@ -9,12 +11,12 @@
     <div class="col-md-12">
 
       <ul class="list-group list-group-horizontal">
-        <li class="list-group-item">Full Name:<span>{{user.userName}} </span></li>
-        <li class="list-group-item">Daily Calorie Goal: <span> {{user.dailyCalorieGoal}} </span></li>
-        <li class="list-group-item">Goal Weight: <span> {{user.goalWeight}}</span></li>
-        <li class="list-group-item">Current Weight: <span> {{user.currentWeight}} </span></li>
-        <li class="list-group-item">Age: <span> {{user.age}} </span></li>
-        <li class="list-group-item"> Gender: <span> {{user.gender}} </span></li>
+        <li class="list-group-item">Full Name:<span id="userName" </span></li>
+        <li class="list-group-item">Daily Calorie Goal: <span id="dailyCalorieGoal"></span> </span></li>
+        <li class="list-group-item">Goal Weight: <span id="goalWeight"></span></li>
+        <li class="list-group-item">Current Weight: <span id="currentWeight"> </spanid> </span></li>
+        <li class="list-group-item">Age: <span id="age"></spanid></span></li>
+        <li class="list-group-item"> Gender: <span id="gender"></spanid> </span></li>
       </ul>
 
     </div>
@@ -44,9 +46,12 @@
         </li>
         {{/each}}
       </ul>
+       <button id="add-calories" class="btn btn-primary float-right">Add Calories</button>
     </div>
+         
   </div>
 </div>
 </div>
 
 <script src="/js/index.js"></script>
+<script src="/js/summary-info.js"></script>
